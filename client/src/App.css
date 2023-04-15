@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
+* {
+  background-color: black;
+}
+
+.title {
+  padding: 2rem;
+  font-family: 'Cal Sans';
+  font-weight: 800;
+  color: #fff;
+  text-align: center;
+}
+
+.points {
+  font-family: 'Cal Sans';
+  color: white;
+  font-weight: light;
+  padding: 2rem;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 2rem;
+}
+
+/* Style the input and button with the accent colour of orange */
+input {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  font-family: 'Cal Sans';
+  color: #fff;
+  outline: none;
+  margin-right: 1rem;
+}
+
+input:hover {
+  border: 0.1rem solid #f9a826;
+  border-radius: 50em;
+}
+
+button {
+  padding: 0.5rem 2rem;
+  border: none;
+  border-radius: 50rem;
+  font-size: 1.25rem;
+  font-family: 'Cal Sans';
+  color: #fff;
+  outline: none;
+  background-color: #f9a826;
+  cursor: pointer;
+}
+
+/* Transition for button hover */
+button:hover {
+  background-color: #f9a826;
+  transform: scale(1.1);
+  transition: all 0.2s ease-in-out;
+  /* Transition for button click */
+  box-shadow: 0 0 0 0.1rem #f9a826;
+}
+
+p {
+  color: white;
+  font-family: 'Cal Sans';
+
+}
