@@ -43,7 +43,7 @@ const prompt = (value) => {
 
       resolve(response);
     } catch (err) {
-      reject(err);
+      console.log(err);
     }
   });
 };
@@ -51,6 +51,7 @@ const prompt = (value) => {
 // Sending the response to App.js
 app.get('/', async (req, res) => {
   const response = await prompt(data);
+  console.log(response)
   res.json(response);
 });
 
