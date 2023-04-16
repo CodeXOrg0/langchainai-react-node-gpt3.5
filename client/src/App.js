@@ -6,7 +6,9 @@ import axios from 'axios'
 function App() {
   const [response, setResponse] = useState('');
 
+  // Function to get response from server.js
   const handleResponse = () => {
+    // Change the port if you change it in server.js
      fetch('http://localhost:8000/')
       .then(res => res.json())
       .then(data => {
@@ -27,6 +29,7 @@ function App() {
     handleResponse()
   }
 
+  // Function to render the response from server.js
   const renderPoints = () => {
     const points = response.split('\n').map((point, index) => {
       return <div key={index}>{point}</div>;
@@ -38,8 +41,8 @@ function App() {
   
   return (
     <div className="App">
-      <h1 className='title'>skillmappr</h1>
-      
+      <h1 className='title'>TITLE GOES HERE</h1>
+
       <form className='form' onSubmit={handleSubmit}>
         <input className='input' type='text' placeholder='Enter your prompt here' />
         <button className='button' type='submit'>Submit</button>

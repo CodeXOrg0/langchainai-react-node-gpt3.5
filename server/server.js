@@ -1,3 +1,4 @@
+// Imports
 const express = require('express')
 
 const app = express();
@@ -12,12 +13,10 @@ const { LLMChain } = require("langchain/chains");
 
 dotenv.config();
 
+// Middleware
 app.use(cors())
 app.use(express.json());
 
-// app.get('/', (req, res) => {
-//   res.json({text:'Hello World!'});
-// })
 
 // Receiving data from App.js
 let data
@@ -32,7 +31,8 @@ const prompt = (value) => {
   return new Promise(async (resolve, reject) => {
     try {
       const model = new OpenAI({ openAIApiKey: process.env.OPENAI_API_KEY, temperature: 0.9 });
-      const template = "Speak as an advanced and expert developer and designer. Speak in technical terms more, and provide specific guidelines. Write out a step-by-step easy to understand roadmap to achieving the goal stated in the question that follows : {question}?";
+      // The `question` variable is the data received from App.js
+      const template = "PROMPT HERE : {question}?";
       const prompt = new PromptTemplate({
         template: template,
         inputVariables: ["question"],
@@ -51,10 +51,10 @@ const prompt = (value) => {
 // Sending the response to App.js
 app.get('/', async (req, res) => {
   const response = await prompt(data);
-  console.log(response)
   res.json(response);
 });
 
+// Change the port if you wish to !
 app.listen(8000, () => {
   console.log('Server listening on port 8000');
 })
